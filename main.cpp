@@ -12,11 +12,14 @@ int main() {
         int blue;
     };
 
-    Color c = {67, 420, 69};
+    vector<Color> c_vector;
 
-    cout << "red: " << c.red << endl;
-    cout << "green: " << c.green << endl;
-    cout << "blue: " << c.blue << endl;
+    Color c = {67, 420, 69};
+    c_vector.push_back(c);
+
+    cout << "red: " << c_vector.at(0).red << endl;
+    cout << "green: " << c_vector.at(0).green << endl;
+    cout << "blue: " << c_vector.at(0).blue << endl;
 
     return 0;
 }
