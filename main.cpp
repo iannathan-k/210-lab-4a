@@ -24,7 +24,7 @@ int main() {
 
     // Iterate n times, pushing to c_vector new temp colors each time
     for (int i = 0; i < n; ++i) {
-        Color c;
+        Color c; // Create temp color instance
         
         c.red = rand() % 256; // Modulo 256 as colors are in range [0, 255]
         c.green = rand() % 256;
@@ -33,7 +33,7 @@ int main() {
         c_vector.push_back(c);
     }
 
-    // Create headers, left aligned, 
+    // Create headers, left aligned, column width of 10
     cout << setw(10) << "Color#";
     cout << setw(10) << "R value";
     cout << setw(10) << "G value";
@@ -43,6 +43,7 @@ int main() {
     cout << setw(10) << "-------";
     cout << setw(10) << "-------" << endl;
 
+    // Output actual data, right aligned, column width of 10
     for (int i = 0; i < n; ++i) {
         cout << setw(10) << right << i;
         cout << setw(10) << right << c_vector.at(i).red;
