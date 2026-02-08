@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 
 using namespace std;
 
@@ -8,6 +9,7 @@ const int MIN = 25; // MIN and MAX values for RNG
 const int MAX = 50;
 
 int main() {
+    srand(time(0)); // Set random seed to current time
 
     struct Color {
         int red;
@@ -31,11 +33,22 @@ int main() {
         c_vector.push_back(c);
     }
 
-    // Print colors to verify 
-    for (const auto& c : c_vector) {
-        cout << "Red: " << c.red << endl;
-        cout << "Green: " << c.green << endl;
-        cout << "Blue: " << c.blue << endl;
+    // Create headers, left aligned, 
+    cout << setw(10) << "Color#";
+    cout << setw(10) << "R value";
+    cout << setw(10) << "G value";
+    cout << setw(10) << "B value" << endl;
+    cout << setw(10) << "------";
+    cout << setw(10) << "-------";
+    cout << setw(10) << "-------";
+    cout << setw(10) << "-------" << endl;
+
+    for (int i = 0; i < n; ++i) {
+        cout << setw(10) << right << i;
+        cout << setw(10) << right << c_vector.at(i).red;
+        cout << setw(10) << right << c_vector.at(i).green;
+        cout << setw(10) << right << c_vector.at(i).blue;
+        cout << endl;
     }
 
     return 0;
